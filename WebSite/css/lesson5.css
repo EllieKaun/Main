@@ -1,0 +1,971 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: 16px "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+}s
+
+
+.menuListTop{
+    list-style: none;
+    display: block;
+
+}
+
+ul li {
+    display: inline-block;
+}
+
+.wrapper{
+    position: relative;
+}
+
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* растягивает на всю шириину */
+    text-align: right;
+    border-bottom: 1px solid rgba(161,161,161,.5);
+}
+
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+}
+@media (max-width: 1110px){
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+
+.headder{
+    height: 100vh;
+    width: 100%;
+    background: url("../img/bc/bcimg.png") no-repeat center;
+    background-size: cover;
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.burger {
+    display: none;
+}
+@media (max-width: 767px) {
+    .burger {
+        display: block;
+        line-height: 40px;
+        padding-left: 10px;
+        color: #fff;
+    }
+    .menuListTop {
+        display: none;
+        position: fixed;
+        top: 40px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+    }
+    .menuListTop.active {
+        display: block;
+    }
+    .menu li {
+        display: block;
+    }
+}
+
+.menu a:not(.burger) {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0 15px;
+    line-height: 97px;
+    border-bottom: 2px solid transparent;
+    font-weight: 800;
+    transition: .15s;
+}
+@media (max-width: 767px) {
+    .menu a:not(.burger) {
+        color: #000;
+        line-height: 50px;
+        text-align: left;
+        font-weight: 500;
+    }
+}
+
+.menu.fixed {
+    background-color: #fff;
+    z-index: 6;
+}
+.menu.fixed a {
+    color: #323232;
+    line-height: 57px;
+}
+.menu.fixed a.active {
+    border-color: #323232;
+}
+
+.menu a:hover {
+    color: rgb(200,200,200);
+}
+
+.menu a.active{
+    border-bottom-color: #fff;
+}
+
+.mainPageMain{
+    height: 703px;
+    display: flex;
+}
+
+@media(max-width:767px){
+    .mainPageMain{
+        height: 100vh;
+    }
+}
+
+.headderText{
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 64px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+    .headderText {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 30px;
+    }
+}
+
+.button{
+    width: 200px;
+    height: 45px;
+    background: #4985FF;
+    box-shadow: 0px 0px 10px rgba(111, 111, 111, 0.25);
+    border-radius: 30px;
+}
+
+.container p{
+    color: #fff;
+}
+
+.mainPageMainContent{
+    width: 100%;
+    display: flex;
+    color: #323232;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.mainPageMainContent p{
+    color: #323232;
+}
+
+.mainPageMainSubContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.mainPageMainSubContentTop{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+
+}
+
+.mainPageMainSubContent h2{
+    font-weight: bold;
+    
+    
+    font-size: 36px;
+    line-height: 53px;
+    text-align: center;
+}
+
+@media (max-width: 767px){
+    .mainPageMainSubContent h2 {
+    font-size: 22px;
+    line-height: 33px;}
+    
+}
+
+.mainPageMainSubContent p.extraText{
+    font-size: 16px;
+    line-height: 25px;
+    color: #999999;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    
+
+}
+@media (max-width: 767px) {
+    .mainPageMainSubContent p.extraText {
+      margin-bottom: 0;
+    line-height: 15px;
+    margin-top: 15px;}
+    
+}
+
+.mainPageMainCards{
+    display: flex;
+    justify-content: space-between;
+
+}
+@media (max-width: 1065px) {
+    .mainPageMainCards{
+        justify-content: center;
+    }
+    .mainPageMainCards:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.cardImg{
+    width: 110px;
+    height: 110px;
+    border: 1px solid #E0E0E0;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.cardSubImg{
+    margin-top: 10px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+    border: 1px solid #4985FF;
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+    width: 40px;
+    height: 40px;
+    margin-top: 25px;
+}
+
+.cards{
+    display: flex;
+}
+@media (max-width: 1065px) {
+    .cards{
+        display: block;
+    }
+}
+
+.mainCardMainText{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-top: 36px;
+}
+
+.mainCard{
+    width: 222px;
+    /* height: 93px; */
+    text-align: left;
+    margin-left: 17px;
+}
+
+.mainCard p{
+    font-size: 14px;
+    line-height: 22px;
+    color: #999999;
+    margin-top: 12px;
+    width: 222px;
+    height: 58px;
+}
+
+.mainPageMainContent button{
+    margin-top: 55px;
+}
+
+.mainPageMainContent button p{
+    color: #fff;
+}
+
+/* конец 2й части страницы */
+
+.mainPageMiddle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 797px;
+    background: #F6F6F8;
+    width: 100%;
+}
+
+@media (max-width: 767px ) {
+    .mainPageMiddle{
+        height: 100vh;}
+    
+}
+
+.mainPageMiddleContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.mainPageMiddleMainContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+@media (max-width:767px) {
+    .mainPageMiddleMainContent{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 0;}
+
+
+}
+
+.middleLeft h2{
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 53px;
+    color: #323232;
+}
+
+@media (max-width:767px) {
+   .middleLeft h2{
+       font-size: 22px;
+       line-height: 33px;
+   } 
+}
+
+.middleLeft p.middleText{
+    font-size: 16px;
+    line-height: 25px;
+    color: #999999;
+    margin-top: 40px;
+}
+
+@media (max-width:767px) {
+    .middleLeft p.middleText{
+    margin-top: 4px;
+}
+}
+
+.middleLeft p.middleLink{
+    margin-top: 30px;
+    color: blue;
+
+}
+
+@media (max-width:767px) {
+    .middleLeft p.middleLink{
+    margin-top: 3px;}
+}
+
+.mainPageMiddleSubContent{
+    display: flex;
+    flex-direction: column;
+    width: 104px;
+    height: 67px;
+}
+
+.middleCard{
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+
+.middleSubCard{
+    margin-top: 10px;
+    height: 30px;
+    width: 30px;
+
+}
+
+@media (max-width:767px) {
+    .middleSubCard{
+    margin-top: 0;}
+    
+    hr{
+        display: none;
+    }
+}
+
+.container p.middleCardSubText{
+    width: 54px;
+    height: 35px;
+    font-size: 36px;
+    line-height: 53px;
+    color: #000000;
+    margin-left: 20px;
+}
+@media (max-width:767px){
+    .container p.middleCardSubText{
+        font-size: 22px;
+    }
+}
+
+.container p.middleExtraText{
+    font-size: 16px;
+    line-height: 25px;
+    color: #999999;
+
+}
+
+.mainMiddleCards{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+
+@media (max-width: 767px) {
+    .mainMiddleCards{
+        justify-content: center;
+        margin-top: 0;
+    }
+    
+}
+
+/* конец 3й части */
+
+.mainPageBottom{
+    width: 100%;
+    height: 972px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("../img/bc/bcimg2.png") ;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+
+@media (max-width: 767px) {
+    .mainPageBottom{
+        height: 1900px;
+        background-size: 200%;
+
+    }
+    
+}
+
+.bottomContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.bottomText{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+@media (max-width:767px){
+    .bottomText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+}
+
+.bottomMainText p{
+    font-size: 36px;
+    line-height: 53px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+@media(max-width:767px){
+    .bottomMainText p{
+        line-height: 33px;
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+}
+
+.bottomCards{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+@media( max-width: 767px){
+    .bottomCards{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.bottomMainCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 544px;
+    width: 350px;
+}
+
+@media (max-width:767px) {
+    .bottomMainCard{
+        margin-top: 8px;
+    }
+}
+
+.bottomCardImg{
+    width: 350px;
+    height: 300px;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.bottomCardImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+.bottomSubCard{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.bottomCardTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bottomMainCard p.zeroOne{
+    height: 17px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #4985FF;
+}
+
+.bottomMainCard p.bottomCardMainText{
+    height: 17px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: black;
+
+}
+
+.bottomMainCard p.bottomCardSubText{
+
+    height: 117px;
+    font-size: 16px;
+    line-height: 25px;
+    color: #999999;
+}
+/* конец 4й части */
+
+.mainPageBottomTwo{
+    margin:auto;
+    height: 776px;
+    width: 100%;
+    background: #F6F6F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:767px) {
+.mainPageBottomTwo{
+    height: 1000px;
+}
+
+    
+}
+
+.bottomTwoText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottomTwoText h2{
+
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 53px;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+@media(max-width: 767px){
+    .bottomTwoText h2{
+        font-size: 22px;
+    }
+
+}
+
+.bottomTwoText p{
+    margin-bottom: 70px;
+    margin-top: 50px;
+    text-align: center;
+
+    font-size: 16px;
+    line-height: 25px;
+    color: #999999;
+}
+
+.bottomTwoContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bottomTwoCards{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:767px ) {
+.bottomTwoCards{
+    display: flex;
+        flex-wrap: wrap;
+    justify-content: space-around;}
+}
+
+.bottomTwoCards img{
+    height: 255px;
+    width: 255px;
+    margin-right: 30px;
+    margin-bottom: 50px;
+}
+
+/* конец 5й части */
+
+.mainPageBottomThree{
+    width: 100%;
+    height: 1082px;
+    background: url("../img/bc/bc3.png") no-repeat ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.threeContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    
+}
+
+.threeText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.threeText h3{
+    /* width: 444px;
+    height: 35px; */
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 53px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    margin-top: 70px;
+}
+
+@media(max-width: 767px){
+    .threeText h3{
+        font-size: 22px;
+    }
+}
+
+.threeText p{
+    margin-bottom: 70px;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.threeForm{
+    height: 432px;
+}
+
+.threeContentImg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    
+} 
+
+@media(max-width: 767px){
+    .threeContentImg img.videoImg{
+        width: 100%;
+    }
+    .line{
+        display: none;
+    }
+}
+
+.video{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    border: 1px solid #FFFFFF;
+    border-radius: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.threeForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+.threeForm h3{
+
+    width: 350px;
+    height: 17px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.threeForm p{
+    
+    height: 15px;
+    font-size: 16px;
+    line-height: 25px;
+    color: #999999;
+    margin-bottom: 30px;
+}
+
+.threeForm p.extraBottomThree{
+ 
+    height: 15px;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    color: #999999;
+    margin-top: 35px;
+
+}
+
+.form{
+    width: 489px;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    box-shadow: 0px 0px 10px rgba(111, 111, 111, 0.25);
+    border-radius: 30px;
+    display: flex;
+
+}
+.formSub{
+    
+    display: flex;
+}
+
+.form button{
+    width: 190px;
+    height: 45px;
+    background: #4985FF;
+    box-shadow: 0px 0px 10px rgba(111, 111, 111, 0.25);
+    border-radius: 0px 30px 30px 0px;
+}
+
+.form input{
+    width: 299px;
+    height: 45px;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.form button h2{
+    color: #fff;
+    
+}
+
+.line{
+    width: 1110px;
+    height: 1px;
+    background-color:#E0E0E0;
+    margin-bottom: 85px;
+}
+
+/* конец 6й части */
+
+/* начало футера */
+
+ .footer{
+    height: 413px;
+    width: 100%;
+    background: #F6F6F8;
+    bottom: 0;
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .footer{
+        height: 100vh;
+    }
+    
+}
+
+.footerContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.footerMainContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:767px) {
+    .footerMainContent{
+        flex-wrap: wrap;
+    }
+}
+
+.footerList{
+    display: flex;
+    flex-direction: column;
+}
+
+.footerMainContent p.extra{
+    
+    height: 17px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 5px;
+    margin-top: 70px;
+}
+
+.footerListCard{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.footerListCard p{
+    height: 14px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #999999;
+    margin-left: 15px;
+} 
+
+.footerList ul.extraList{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+ul.extraList li{
+    margin-top: 30px;
+}
+
+ul.extraList li a{
+    font-size: 14px;
+    line-height: 22px;
+    color: #999999;
+    margin-left: 12px;
+}
+
+ul.extraList li i{
+    color: #999999;
+}
+
+.footerSubContent{
+    display: flex;
+    height: 145px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width:767px) {
+    .footerSubContent{
+        height: 90px;
+    }
+
+}
+
+.footerSubContent div.list{
+    margin-bottom: 30px;
+}
+
+.rights p {
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    color: #999999;
+}
